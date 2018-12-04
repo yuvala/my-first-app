@@ -1,0 +1,7 @@
+<div class="user-section">
+user: 
+<input type="text" [(ngModel)]="userName">
+
+<button [disabled]="userName ===''"  (click)="onBtnClcked()"  class="btn btn-primary">click</button>
+<span>{{userName}}</span>
+</div>
