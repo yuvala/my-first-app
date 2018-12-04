@@ -1,7 +1,16 @@
-<p>wall this is the Server componenent !!</p>
-
-<button class="btn btn-primary" [disabled]="!allowButtonClick">button</button>
-<p [innerText]="allowButtonClick"></p>
-<app-error-message></app-error-message>
-<app-warning-message></app-warning-message>
- 
+<div class="serverFrame">
+    <div class="btn-section">
+        Server Name: 
+        <!-- <input type="text" (input)="onServerNameUpdated($event)"> -->
+        <input type="text" [(ngModel)]="serverName">
+      
+    </div>
+    <div class="btn-section">
+        <button class="btn btn-primary" [disabled]="!allowButtonClick" (click)="onServerCreated()">button</button>
+        <!-- <p [innerText]="allowButtonClick"></p> -->
+        <div> {{serverCreationStatus}}</div>
+         
+    </div>
+    <app-error-message></app-error-message>
+    <app-warning-message></app-warning-message>
+</div>
