@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SSL_OP_SINGLE_DH_USE } from 'constants';
+ 
 
 @Component({
     selector: 'app-server',
@@ -24,6 +24,8 @@ export class ServerComponent implements OnInit {
     allowButtonClick = false;
     serverCreationStatus = 'No server was created!';
     serverName = 'walla';
+    serverCreated = false;
+    servers = ['test server', 'test server 2'];
     constructor() {
         setTimeout(() => {
             this.allowButtonClick = true;
@@ -33,6 +35,8 @@ export class ServerComponent implements OnInit {
 
     }
     onServerCreated () {
+        this.serverCreated = true;
+        this.servers.push(this.serverName);
         this.serverCreationStatus = 'Server was created! Name is ' + this.serverName;
     }
     onServerNameUpdated (event: Event) {

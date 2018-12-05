@@ -6,9 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
-
-  constructor() { }
-
+  allowButtonClick = false;
+    serverCreationStatus = 'No server was created!';
+    serverName = 'walla';
+    serverCreated = false;
+    server = ['test server', 'test server 2'];
+    constructor() {
+        setTimeout(() => {
+            this.allowButtonClick = true;
+        }, 5000);
+    }
   ngOnInit() {
   }
 

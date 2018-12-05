@@ -8,9 +8,13 @@
     <div class="btn-section">
         <button class="btn btn-primary" [disabled]="!allowButtonClick" (click)="onServerCreated()">button</button>
         <!-- <p [innerText]="allowButtonClick"></p> -->
-        <div> {{serverCreationStatus}}</div>
+        <div *ngIf="serverCreated else noServer"> {{serverCreationStatus}}</div>
+        <ng-template #noServer>
+                <div > no server was creatred</div>
+        </ng-template>
          
     </div>
+    <div *ngFor="let server of servers ;let i = index">{{server}}</div> 
     <app-error-message></app-error-message>
     <app-warning-message></app-warning-message>
 </div>
